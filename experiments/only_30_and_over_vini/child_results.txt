@@ -1,0 +1,5 @@
+True positives: 45 [37.5%]
+True negatives: 19 [15.833333333333332%]
+False positives: 41 [34.166666666666664%]
+False negatives: 15 [12.5%]
+acc: 64 [60.83333333333333%]

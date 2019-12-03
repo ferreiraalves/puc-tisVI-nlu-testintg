@@ -1,0 +1,4 @@
+True positives: 88 [0.4888888888888889%]
+True negatives: 13 [0.07222222222222222%]
+False positives: 77 [0.42777777777777776%]
+False negatives: 2 [0.011111111111111112%]

@@ -21,3 +21,14 @@ def get_files_in_folder(path):
             files.append(os.path.join(r, f[i]))
 
     return files
+
+
+def get_child_files_in_folder(path):
+    from main import adult_folders
+    files = []
+    # r=root, d=directories, f = files
+    for r, d, f in os.walk(path):
+        for i in range(config.n_test * len(adult_folders)):
+            files.append(os.path.join(r, f[i]))
+
+    return files
