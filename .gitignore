@@ -1,3 +1,5 @@
 env
 blogs
 .idea/
+trash
+__pycache__/
