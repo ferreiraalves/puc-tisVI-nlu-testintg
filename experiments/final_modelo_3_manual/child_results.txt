@@ -1,0 +1,6 @@
+Total: 400 
+True positives: 154 [38.5%]
+True negatives: 145 [36.25%]
+False positives: 54 [13.5%]
+False negatives: 46 [11.5%]
+acc: 299 [74.75%]

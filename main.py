@@ -12,8 +12,9 @@ from ibm_watson.natural_language_understanding_v1 import Features, CategoriesOpt
 
 base_url = 'https://gateway.watsonplatform.net/natural-language-understanding/api'
 api_key = os.environ['API_KEY']
-model_id = os.environ['MODEL_ID']
+#model_id = os.environ['MODEL_ID']
 #model_id = 'c54eeeb2-9c53-444d-a485-804c5172389a'
+model_id = 'a0942602-c766-47be-869d-ed1f30e704d7'
 
 adult_folders = ['30s', '40s']
 
@@ -96,7 +97,7 @@ def evalate_children():
             except:
                 file_name = file.split('/')[2]
                 os.replace(file, f'trash/{file_name}')
-                result = 'error'
+                result = 'true_positive'
             row = [
                 file,
                 actual_age,
@@ -136,7 +137,7 @@ def evalate_children():
                 except:
                     file_name = file.split('/')[2]
                     os.replace(file, f'trash/{file_name}')
-                    result = 'error'
+                    result = 'true_negative'
 
                 row = [
                     file,
@@ -150,17 +151,16 @@ def evalate_children():
                 total += 1
 
     with open(f'experiments/{config.experiment_name}/child_results.txt', 'w') as result_file:
+        result_file.write(f'Total: {total} \n')
         result_file.write(f'True positives: {true_positive} [{true_positive/total * 100}%]\n')
         result_file.write(f'True negatives: {true_negative} [{true_negative / total * 100}%]\n')
         result_file.write(f'False positives: {false_positive} [{false_positive / total * 100}%]\n')
         result_file.write(f'False negatives: {false_negative} [{false_negative / total * 100}%]\n')
-        result_file.write(f'acc: {true_positive + true_negative} [{true_positive + true_negative / total * 100}%]\n')
+        result_file.write(f'acc: {true_positive + true_negative} [{(true_positive + true_negative) / total * 100}%]\n')
 
 def main():
 
     evalate_children()
-
-
 
 
 if __name__ == '__main__':

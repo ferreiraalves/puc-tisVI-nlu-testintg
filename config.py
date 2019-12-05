@@ -1,6 +1,6 @@
-n_test = 30
+n_test = 100
 posts = 10
-experiment_name = 'only_30_and_over_vini'
+experiment_name = 'final_modelo_3_manual'
 
 
 csv_header = ['file', 'actual_age', 'actual_classification', 'predicted_classification', 'result']
