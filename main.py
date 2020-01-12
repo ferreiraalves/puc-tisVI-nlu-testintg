@@ -28,7 +28,7 @@ def get_nlu_reponse(text):
     response = natural_language_understanding.analyze(
         text=text,
         features=Features(categories=CategoriesOptions(limit=3, model=model_id))).get_result()
-
+    print(response['categories'])
     return response['categories']
 
 
@@ -162,6 +162,9 @@ def main():
 
     evalate_children()
 
-
+    [
+        {'score': 0.506614, 'label': '/Adult'},
+        {'score': 0.493386, 'label': '/Child'}
+    ]
 if __name__ == '__main__':
     main()
