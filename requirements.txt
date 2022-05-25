@@ -4,7 +4,7 @@ ibm-cloud-sdk-core==1.0.0
 ibm-watson==4.0.1
 idna==2.8
 pkg-resources==0.0.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 python-dateutil==2.8.1
 requests==2.22.0
 six==1.13.0
